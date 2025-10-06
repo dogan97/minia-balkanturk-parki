@@ -32,8 +32,8 @@ export const artworksData: Artwork[] = [
       bg: 'Тази сграда, важен свидетел на историята на Републиката, е оборудвана с ценни артефакти, които хвърлят светлина върху живота и епохата на Ататюрк.',
       sr: 'Ova zgrada, važan svedok istorije Republike, opremljena je vrednim artefaktima koji bacaju svetlo na Atatürkov život i epohu.',
     },
-    images: ['./data/images/ataturk-evi.jpg', 'https://picsum.photos/seed/skanderbeg1/1200/800', './data/images/ataturk-evi.jpg'],
-    thumbnail: './data/images/ataturk-evi.jpg',
+    images: ['https://picsum.photos/seed/ataturk-house1/800/600', 'https://picsum.photos/seed/ataturk-house2/800/600', 'https://picsum.photos/seed/ataturk-house3/800/600'],
+    thumbnail: 'https://picsum.photos/seed/ataturk-house/400/300',
   },
   {
     id: 2,
@@ -60,8 +60,8 @@ export const artworksData: Artwork[] = [
       bg: 'Замъкът, който има важна стратегическа позиция на Балканите, е многопластова историческа структура, носеща следи от много цивилизации.',
       sr: 'Tvrđava, koja ima važnu stratešku poziciju na Balkanu, je višeslojna istorijska struktura koja nosi tragove mnogih civilizacija.',
     },
-    images: ['./data/images/iskodra kalesi.jpg', 'https://picsum.photos/seed/skanderbeg1/1200/800', './data/images/iskodra kalesi.jpg'],
-    thumbnail: './data/images/iskodra kalesi.jpg',
+    images: ['https://picsum.photos/seed/shkoder-castle1/800/600', 'https://picsum.photos/seed/shkoder-castle2/800/600', 'https://picsum.photos/seed/shkoder-castle3/800/600'],
+    thumbnail: 'https://picsum.photos/seed/shkoder-castle/400/300',
   },
   {
     id: 3,
@@ -88,8 +88,8 @@ export const artworksData: Artwork[] = [
       bg: 'Часовниковата кула, един от важните примери за османската архитектура в Черна гора, е ценно културно наследство, отразяващо историческата структура на града.',
       sr: 'Sahat kula, jedan od važnih primera osmanske arhitekture u Crnoj Gori, je dragoceno kulturno nasleđe koje odražava istorijsku strukturu grada.',
     },
-    images: ['./data/images/saat-kulesi.JPG', 'https://picsum.photos/seed/skanderbeg1/1200/800'],
-    thumbnail: './data/images/saat-kulesi.JPG',
+    images: ['https://picsum.photos/seed/clock-tower1/800/600', 'https://picsum.photos/seed/clock-tower2/800/600'],
+    thumbnail: 'https://picsum.photos/seed/clock-tower/400/300',
   },
   {
     id: 4,
@@ -116,8 +116,8 @@ export const artworksData: Artwork[] = [
       bg: 'Мостът, един от важните примери на османската архитектура на Балканите, свързва старата и новата част на Скопие и е важна част от историческата идентичност на града.',
       sr: 'Most, jedan od važnih primera osmanske arhitekture na Balkanu, povezuje stari i novi deo grada Skoplja i važan je deo istorijskog identiteta grada.'
     },
-    images: ['./data/images/tas-kopru.jpg', 'https://picsum.photos/seed/skanderbeg1/1200/800'],
-    thumbnail: './data/images/tas-kopru.jpg',
+    images: ['https://picsum.photos/seed/stone-bridge1/800/600', 'https://picsum.photos/seed/stone-bridge2/800/600'],
+    thumbnail: 'https://picsum.photos/seed/stone-bridge/400/300',
   },
   {
     id: 5,
@@ -144,8 +144,8 @@ export const artworksData: Artwork[] = [
       bg: 'Като един от примерите на османската традиция за бани на Балканите, това е важно архитектурно наследство, отразяващо многокултурната история на региона.',
       sr: 'Kao jedan od primera osmanske tradicije hamama na Balkanu, predstavlja važno arhitektonsko nasleđe koje odražava multikulturalnu istoriju regiona.'
     },
-    images: ['./data/images/voyvodina-hamami.jpg', 'https://picsum.photos/seed/skanderbeg1/1200/800'],
-    thumbnail: './data/images/voyvodina-hamami.jpg',
+    images: ['https://picsum.photos/seed/bath-house1/800/600', 'https://picsum.photos/seed/bath-house2/800/600'],
+    thumbnail: 'https://picsum.photos/seed/bath-house/400/300',
   },
   {
     id: 6,
@@ -167,8 +167,8 @@ export const artworksData: Artwork[] = [
       bg: 'Посветена е на османския султан Мурад I и е важен османски паметник на Балканите.',
       sr: 'Posvećen je osmanskom sultanu Muratu I i važan je osmanski spomenik na Balkanu.'
     },
-    images: ['./data/images/sultan-murad-turbesi.jpg', 'https://picsum.photos/seed/skanderbeg1/1200/800'],
-    thumbnail: './data/images/sultan-murad-turbesi.jpg',
+    images: ['https://picsum.photos/seed/sultan-tomb1/800/600', 'https://picsum.photos/seed/sultan-tomb2/800/600'],
+    thumbnail: 'https://picsum.photos/seed/sultan-tomb/400/300',
   },
   {
     id: 7,
@@ -195,8 +195,8 @@ export const artworksData: Artwork[] = [
         bg: 'Крепостта, важен свидетел на османо-хабсбургските войни, е разположена на стратегическа точка, където се пресичат източната и западната култура на Балканите.',
         sr: 'Tvrđava, važan svedok osmansko-habzburških ratova, smeštena je na strateškoj tački gde se ukrštaju istočna i zapadna kultura na Balkanu.'
     },
-    images: ['./data/images/klis-kalesi.jpg', 'https://picsum.photos/seed/skanderbeg1/1200/800'],
-    thumbnail: './data/images/klis-kalesi.jpg',
+    images: ['https://picsum.photos/seed/klis-fortress1/800/600', 'https://picsum.photos/seed/klis-fortress2/800/600'],
+    thumbnail: 'https://picsum.photos/seed/klis-fortress/400/300',
   },
   {
       id: 8,
@@ -223,8 +223,8 @@ export const artworksData: Artwork[] = [
           bg: 'Катедралата, символ на православната християнска вяра на гагаузкия народ, е един от важните представители на гагаузката култура с балкански произход на молдовска земя.',
           sr: 'Katedrala, simbol pravoslavne hrišćanske vere gagauzkog naroda, jedan je od važnih predstavnika gagauske kulture balkanskog porekla na moldavskoj zemlji.'
       },
-      images: ['./data/images/komrat-katedrali.jpg', 'https://picsum.photos/seed/skanderbeg1/1200/800'],
-      thumbnail: './data/images/komrat-katedrali.jpg',
+      images: ['https://picsum.photos/seed/cathedral1/800/600', 'https://picsum.photos/seed/cathedral2/800/600'],
+      thumbnail: 'https://picsum.photos/seed/cathedral/400/300',
   },
   {
       id: 9,
@@ -251,8 +251,8 @@ export const artworksData: Artwork[] = [
           bg: 'Джамията, важна част от архитектурното наследство на Османската империя на Балканите, е ценно произведение, което демонстрира влиянието на ислямското изкуство и архитектура в региона.',
           sr: 'Džamija, važan deo arhitektonskog nasleđa Osmanskog carstva na Balkanu, je dragoceno delo koje demonstrira uticaj islamske umetnosti i arhitekture u regionu.'
       },
-      images: ['./data/images/ibrahim-pasa-camii.jpg', 'https://picsum.photos/seed/skanderbeg1/1200/800'],
-      thumbnail: './data/images/ibrahim-pasa-camii.jpg',
+      images: ['https://picsum.photos/seed/mosque1/800/600', 'https://picsum.photos/seed/mosque2/800/600'],
+      thumbnail: 'https://picsum.photos/seed/mosque/400/300',
   },
   // {
   //     id: 10,
