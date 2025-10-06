@@ -1,0 +1,29 @@
+
+{
+  "translation": {
+    "nav_home": "Početna",
+    "nav_about": "O nama",
+    "nav_artworks": "Dela",
+    "home_title": "Srce Balkana kuca u Bursi",
+    "home_subtitle": "Otkrijte naše zajedničko kulturno nasleđe u parku Minia Balkantürk.",
+    "home_button": "Istražite dela",
+    "home_location_title": "Lokacija parka",
+    "about_title": "O nama",
+    "about_purpose_title": "Svrha osnivanja",
+    "about_purpose_text": "Park Minia Balkantürk osnovan je da oživi zajedničko istorijsko i kulturno nasleđe na Balkanu, da to nasleđe prenese budućim generacijama i da ojača mostove prijateljstva između balkanskih zemalja i Turske.",
+    "about_mission_title": "Naša misija",
+    "about_mission_text": "Pružiti našim posetiocima edukativno i prijatno iskustvo predstavljanjem bogatih arhitektonskih i kulturnih dela Balkana u minijaturnom obliku; biti mesto susreta koje jača kulturne veze.",
+    "about_vision_title": "Naša vizija",
+    "about_vision_text": "Učiniti Bursu međunarodnim centrom privlačnosti gde se promovišu balkanska kultura i istorija, i učiniti park Minia Balkantürk jednim od vodećih minijaturnih parkova na svetu u ovoj oblasti.",
+    "artworks_title": "Galerija dela",
+    "artworks_subtitle": "Istražite arhitektonska čuda izabrana sa Balkana.",
+    "artwork_card_button": "Pogledaj detalje",
+    "artwork_detail_location": "Stvarna lokacija",
+    "artwork_detail_architect": "Arhitekta",
+    "artwork_detail_year": "Godina izgradnje",
+    "artwork_detail_scale": "Razmera",
+    "artwork_detail_background": "Kulturna pozadina",
+    "footer_copyright": "© Minia Balkantürk Park 2025. Sva prava zadržana.",
+    "not_found": "Stranica nije pronađena"
+  }
+}

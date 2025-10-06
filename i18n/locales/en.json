@@ -1,0 +1,29 @@
+
+{
+  "translation": {
+    "nav_home": "Home",
+    "nav_about": "About Us",
+    "nav_artworks": "Artworks",
+    "home_title": "The Heart of the Balkans Beats in Bursa",
+    "home_subtitle": "Discover our common cultural heritage at Minia Balkantürk Park.",
+    "home_button": "Discover the Artworks",
+    "home_location_title": "Park Location",
+    "about_title": "About Us",
+    "about_purpose_title": "Purpose of Establishment",
+    "about_purpose_text": "Minia Balkantürk Park was established to revive the common historical and cultural heritage in the Balkan geography, to pass this heritage on to future generations, and to strengthen the bridges of friendship between Balkan countries and Turkey.",
+    "about_mission_title": "Our Mission",
+    "about_mission_text": "To provide our visitors with an educational and enjoyable experience by presenting the rich architectural and cultural works of the Balkan geography in miniature form; to be a meeting point that strengthens cultural ties.",
+    "about_vision_title": "Our Vision",
+    "about_vision_text": "To make Bursa an international center of attraction where Balkan culture and history are promoted, and to make Minia Balkantürk Park one of the world's leading miniature parks in this field.",
+    "artworks_title": "Artworks Gallery",
+    "artworks_subtitle": "Explore architectural wonders selected from the Balkan geography.",
+    "artwork_card_button": "View Details",
+    "artwork_detail_location": "Real Location",
+    "artwork_detail_architect": "Architect",
+    "artwork_detail_year": "Construction Year",
+    "artwork_detail_scale": "Scale",
+    "artwork_detail_background": "Cultural Background",
+    "footer_copyright": "© Minia Balkantürk Park 2025. All rights reserved.",
+    "not_found": "Page Not Found"
+  }
+}

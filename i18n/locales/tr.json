@@ -1,0 +1,29 @@
+
+{
+  "translation": {
+    "nav_home": "Anasayfa",
+    "nav_about": "Hakkımızda",
+    "nav_artworks": "Eserler",
+    "home_title": "Balkanların Kalbi Bursa'da Atıyor",
+    "home_subtitle": "Minia Balkantürk Parkı'nda ortak kültürel mirasımızı keşfedin.",
+    "home_button": "Eserleri Keşfet",
+    "home_location_title": "Park Konumu",
+    "about_title": "Hakkımızda",
+    "about_purpose_title": "Kuruluş Amacı",
+    "about_purpose_text": "Minia Balkantürk Parkı, Balkan coğrafyasındaki ortak tarihi ve kültürel mirası canlandırmak, bu mirası gelecek nesillere aktarmak ve Balkan ülkeleri ile Türkiye arasındaki dostluk köprülerini güçlendirmek amacıyla kurulmuştur.",
+    "about_mission_title": "Misyonumuz",
+    "about_mission_text": "Ziyaretçilerimize, Balkan coğrafyasının zengin mimari ve kültürel eserlerini minyatür formda sunarak, hem eğitici hem de keyifli bir deneyim yaşatmak; kültürel bağları kuvvetlendiren bir buluşma noktası olmaktır.",
+    "about_vision_title": "Vizyonumuz",
+    "about_vision_text": "Bursa'yı, Balkan kültürünün ve tarihinin tanıtıldığı uluslararası bir cazibe merkezi haline getirmek ve Minia Balkantürk Parkı'nı bu alanda dünyanın önde gelen minyatür parklarından biri yapmaktır.",
+    "artworks_title": "Eserler Galerisi",
+    "artworks_subtitle": "Balkan coğrafyasından seçilmiş mimari harikaları keşfedin.",
+    "artwork_card_button": "Detayları Gör",
+    "artwork_detail_location": "Gerçek Konum",
+    "artwork_detail_architect": "Mimar",
+    "artwork_detail_year": "Yapım Yılı",
+    "artwork_detail_scale": "Ölçek",
+    "artwork_detail_background": "Kültürel Arka Plan",
+    "footer_copyright": "© Minia Balkantürk Parkı 2025. Tüm hakları saklıdır.",
+    "not_found": "Sayfa Bulunamadı"
+  }
+}
