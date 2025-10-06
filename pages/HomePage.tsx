@@ -20,17 +20,6 @@ const FeatureCard: React.FC<{
   </div>
 );
 
-const StatCard: React.FC<{ number: string; label: string; icon: string }> = ({ number, label, icon }) => (
-  <div className="text-center group">
-    <div className="w-20 h-20 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300">
-      <span className="text-3xl">{icon}</span>
-    </div>
-    <div className="text-4xl font-bold bg-gradient-to-r from-emerald-700 to-teal-700 bg-clip-text text-transparent mb-2">
-      {number}
-    </div>
-    <div className="text-slate-600 font-medium">{label}</div>
-  </div>
-);
 
 export const HomePage: React.FC = () => {
   const { t } = useTranslation();
@@ -83,13 +72,110 @@ export const HomePage: React.FC = () => {
             </div>
           </div>
 
-          {/* Stats Section */}
+          {/* Hero Visual Section */}
           <div className="mb-20">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-              <StatCard number="9" label="Tarihi Eser" icon="🏛️" />
-              <StatCard number="4" label="Dil Desteği" icon="🌍" />
-              <StatCard number="2024" label="Kuruluş Yılı" icon="⭐" />
-              <StatCard number="∞" label="Kültürel Miras" icon="💎" />
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[600px] md:h-[700px]">
+              {/* Hero Background Image */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                style={{
+                  backgroundImage: `url('https://picsum.photos/seed/balkan-architecture/1920/1080')`
+                }}
+              ></div>
+              
+              {/* Overlay Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-900/80 via-teal-900/70 to-cyan-900/80"></div>
+              
+              {/* Floating Photo Cards */}
+              <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute top-20 left-10 transform rotate-12 opacity-80">
+                  <img 
+                    src="https://picsum.photos/seed/castle1/200/150" 
+                    alt="Historic Castle"
+                    className="rounded-xl shadow-xl border-4 border-white/30"
+                  />
+                </div>
+                <div className="absolute top-32 right-16 transform -rotate-6 opacity-70">
+                  <img 
+                    src="https://picsum.photos/seed/bridge1/180/140" 
+                    alt="Ancient Bridge"
+                    className="rounded-xl shadow-xl border-4 border-white/30"
+                  />
+                </div>
+                <div className="absolute bottom-32 left-20 transform rotate-6 opacity-75">
+                  <img 
+                    src="https://picsum.photos/seed/mosque1/160/120" 
+                    alt="Historic Mosque"
+                    className="rounded-xl shadow-xl border-4 border-white/30"
+                  />
+                </div>
+                <div className="absolute bottom-40 right-32 transform -rotate-12 opacity-60">
+                  <img 
+                    src="https://picsum.photos/seed/cathedral1/140/110" 
+                    alt="Cathedral"
+                    className="rounded-xl shadow-xl border-4 border-white/30"
+                  />
+                </div>
+              </div>
+              
+              {/* Hero Content */}
+              <div className="relative z-10 h-full flex items-center justify-center text-center text-white px-4">
+                <div className="max-w-4xl mx-auto">
+                  <div className="flex justify-center mb-8">
+                    <div className="bg-white/20 backdrop-blur-sm rounded-full p-6 shadow-2xl border border-white/30">
+                      <span className="text-6xl">🏛️</span>
+                    </div>
+                  </div>
+                  
+                  <h2 className="text-5xl md:text-7xl font-extrabold mb-8 leading-tight drop-shadow-2xl">
+                    Balkan Mirasını <br />
+                    <span className="text-yellow-300 drop-shadow-lg">Keşfedin</span>
+                  </h2>
+                  
+                  <p className="text-xl md:text-2xl text-emerald-100 mb-12 max-w-3xl mx-auto leading-relaxed drop-shadow-lg">
+                    9 tarihi eserle Balkan coğrafyasının zengin kültürel mirasını minyatür formda deneyimleyin
+                  </p>
+                  
+                  {/* Action Buttons */}
+                  <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+                    <Link
+                      to="/eserler"
+                      className="group inline-flex items-center justify-center bg-gradient-to-r from-yellow-400 to-yellow-500 text-slate-900 font-bold py-4 px-10 rounded-2xl text-xl hover:from-yellow-300 hover:to-yellow-400 transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-yellow-500/25"
+                    >
+                      <span className="mr-3">Eserleri Keşfet</span>
+                      <svg className="w-6 h-6 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </Link>
+                    <Link
+                      to="/hakkimizda"
+                      className="inline-flex items-center justify-center bg-white/10 backdrop-blur-sm text-white font-semibold py-4 px-10 rounded-2xl text-xl hover:bg-white/20 hover:scale-105 transition-all duration-300 shadow-xl border border-white/30 hover:border-white/50"
+                    >
+                      Hakkımızda
+                    </Link>
+                  </div>
+                  
+                  {/* Hero Stats */}
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
+                      <div className="text-4xl font-bold text-yellow-300 mb-2">9</div>
+                      <div className="text-sm text-emerald-100 font-medium">Tarihi Eser</div>
+                    </div>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
+                      <div className="text-4xl font-bold text-yellow-300 mb-2">4</div>
+                      <div className="text-sm text-emerald-100 font-medium">Dil Desteği</div>
+                    </div>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
+                      <div className="text-4xl font-bold text-yellow-300 mb-2">1:25</div>
+                      <div className="text-sm text-emerald-100 font-medium">Ortalama Ölçek</div>
+                    </div>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/15 transition-all duration-300">
+                      <div className="text-4xl font-bold text-yellow-300 mb-2">∞</div>
+                      <div className="text-sm text-emerald-100 font-medium">Kültürel Değer</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
