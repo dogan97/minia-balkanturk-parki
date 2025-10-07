@@ -57,7 +57,7 @@ export const ArtworkDetailPage: React.FC = () => {
   
   return (
     <div className="bg-white pt-24">
-      <div className="py-20">
+      <div className="py-2">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header Section */}
           <div className="mb-12">
