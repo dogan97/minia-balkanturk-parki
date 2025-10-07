@@ -3,16 +3,17 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useArtworkBySlug } from '../hooks/useArtworks';
+import { HiArrowLeft, HiArrowRight, HiLocationMarker, HiUser, HiCalendar, HiScale, HiBook, HiOfficeBuilding, HiSearch, HiHome } from 'react-icons/hi';
 
 const InfoCard: React.FC<{ 
   label: string; 
   value: string; 
-  icon: string;
+  icon: React.ReactNode;
 }> = ({ label, value, icon }) => (
   <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
     <div className="flex items-center mb-3">
       <div className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center mr-3">
-        <span className="text-lg text-white">{icon}</span>
+        {icon}
       </div>
       <h3 className="text-sm font-semibold text-gray-600 uppercase tracking-wider">{label}</h3>
     </div>
@@ -53,9 +54,7 @@ export const ArtworkDetailPage: React.FC = () => {
               to="/eserler" 
               className="inline-flex items-center bg-gray-100 rounded-lg px-4 py-2 hover:bg-gray-200 transition-colors duration-300 mb-8"
             >
-              <svg className="w-5 h-5 mr-2 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
+              <HiArrowLeft className="w-5 h-5 mr-2 text-gray-600" />
               <span className="font-medium text-gray-700">Geri Dön</span>
             </Link>
 
@@ -92,17 +91,13 @@ export const ArtworkDetailPage: React.FC = () => {
                         onClick={prevImage} 
                         className="absolute left-4 top-1/2 -translate-y-1/2 bg-white text-slate-800 p-2 rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg"
                       >
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                        </svg>
+                        <HiArrowLeft className="w-5 h-5" />
                       </button>
                       <button 
                         onClick={nextImage} 
                         className="absolute right-4 top-1/2 -translate-y-1/2 bg-white text-slate-800 p-2 rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg"
                       >
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
+                        <HiArrowRight className="w-5 h-5" />
                       </button>
                     </>
                   )}
@@ -139,7 +134,7 @@ export const ArtworkDetailPage: React.FC = () => {
               <div className="bg-white rounded-lg p-8 shadow-lg border border-gray-200">
                 <div className="flex items-center mb-6">
                   <div className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center mr-4">
-                    <span className="text-lg text-white">📖</span>
+                    <HiBook className="text-lg text-white w-5 h-5" />
                   </div>
                   <h2 className="text-2xl font-bold text-slate-800">
                     Açıklama
@@ -153,22 +148,22 @@ export const ArtworkDetailPage: React.FC = () => {
                 <InfoCard 
                   label={t('artwork_detail_location')} 
                   value={artwork.location}
-                  icon="📍"
+                  icon={<HiLocationMarker className="text-white w-5 h-5" />}
                 />
                 <InfoCard 
                   label={t('artwork_detail_architect')} 
                   value={artwork.architect}
-                  icon="👷"
+                  icon={<HiUser className="text-white w-5 h-5" />}
                 />
                 <InfoCard 
                   label={t('artwork_detail_year')} 
                   value={artwork.year}
-                  icon="📅"
+                  icon={<HiCalendar className="text-white w-5 h-5" />}
                 />
                 <InfoCard 
                   label={t('artwork_detail_scale')} 
                   value={artwork.scale}
-                  icon="📏"
+                  icon={<HiScale className="text-white w-5 h-5" />}
                 />
               </div>
             </div>
@@ -179,7 +174,7 @@ export const ArtworkDetailPage: React.FC = () => {
             <div className="bg-gray-50 rounded-lg p-8 md:p-12">
               <div className="flex items-center mb-8">
                 <div className="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center mr-4">
-                  <span className="text-2xl text-white">🏛️</span>
+                  <HiOfficeBuilding className="text-2xl text-white w-6 h-6" />
                 </div>
                 <h2 className="text-2xl md:text-3xl font-bold text-slate-800">
                   {t('artwork_detail_background')}
@@ -201,7 +196,7 @@ export const NotFoundPage: React.FC = () => {
             <div className="text-center px-4">
                 <div className="bg-gray-50 rounded-lg p-12 max-w-md mx-auto">
                     <div className="w-24 h-24 bg-slate-800 rounded-lg flex items-center justify-center mx-auto mb-8">
-                        <span className="text-4xl text-white">🔍</span>
+                        <HiSearch className="text-4xl text-white w-12 h-12" />
                     </div>
                     <h1 className="text-4xl font-bold text-slate-800 mb-4">
                         {t('not_found')}
@@ -211,9 +206,7 @@ export const NotFoundPage: React.FC = () => {
                         to="/" 
                         className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300"
                     >
-                        <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                        </svg>
+                        <HiHome className="w-5 h-5 mr-2" />
                         Ana Sayfaya Dön
                     </Link>
                 </div>

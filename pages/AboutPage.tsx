@@ -1,13 +1,14 @@
 
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { HiOfficeBuilding, HiTarget, HiRocket, HiEye, HiGlobeAlt, HiStar, HiCollection } from 'react-icons/hi';
 
 const InfoCard: React.FC<{ 
   title: string; 
   text: string; 
   imageUrl: string; 
   reverse?: boolean;
-  icon?: string;
+  icon?: React.ReactNode;
 }> = ({ title, text, imageUrl, reverse = false, icon }) => (
   <div className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
     <div className={`flex flex-col lg:flex-row items-center ${reverse ? 'lg:flex-row-reverse' : ''}`}>
@@ -15,7 +16,7 @@ const InfoCard: React.FC<{
         <div className="flex items-center mb-6">
           {icon && (
             <div className="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center mr-4">
-              <span className="text-xl text-white">{icon}</span>
+              {icon}
             </div>
           )}
           <h3 className="text-2xl font-bold text-slate-800">
@@ -40,10 +41,10 @@ const InfoCard: React.FC<{
   </div>
 );
 
-const StatsCard: React.FC<{ number: string; label: string; icon: string }> = ({ number, label, icon }) => (
+const StatsCard: React.FC<{ number: string; label: string; icon: React.ReactNode }> = ({ number, label, icon }) => (
   <div className="text-center bg-white p-6 rounded-lg shadow-lg">
     <div className="w-16 h-16 bg-slate-800 rounded-lg flex items-center justify-center mx-auto mb-4">
-      <span className="text-2xl text-white">{icon}</span>
+      {icon}
     </div>
     <div className="text-3xl font-bold text-slate-800 mb-2">
       {number}
@@ -66,7 +67,7 @@ export const AboutPage: React.FC = () => {
       <div className="bg-slate-900 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center bg-white rounded-lg p-3 mb-8">
-            <span className="text-3xl">🏛️</span>
+            <HiOfficeBuilding className="text-3xl w-8 h-8 text-slate-800" />
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             {t('about_title')}
@@ -86,10 +87,10 @@ export const AboutPage: React.FC = () => {
           {/* Stats Section */}
           <div className="bg-gray-50 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-16 mb-20">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-              <StatsCard number="10+" label="Tarihi Eser" icon="🏛" />
-              <StatsCard number="4" label="Dil Desteği" icon="🌍" />
-              <StatsCard number="2024" label="Kuruluş Yılı" icon="⭐" />
-              <StatsCard number="∞" label="Kültürel Miras" icon="💎" />
+              <StatsCard number="10+" label="Tarihi Eser" icon={<HiOfficeBuilding className="text-2xl text-white w-6 h-6" />} />
+              <StatsCard number="4" label="Dil Desteği" icon={<HiGlobeAlt className="text-2xl text-white w-6 h-6" />} />
+              <StatsCard number="2024" label="Kuruluş Yılı" icon={<HiStar className="text-2xl text-white w-6 h-6" />} />
+              <StatsCard number="∞" label="Kültürel Miras" icon={<HiCollection className="text-2xl text-white w-6 h-6" />} />
             </div>
           </div>
           
@@ -99,20 +100,20 @@ export const AboutPage: React.FC = () => {
               title={t('about_purpose_title')}
               text={t('about_purpose_text')}
               imageUrl="https://picsum.photos/seed/purpose/800/600"
-              icon="🎯"
+              icon={<HiTarget className="text-xl text-white w-5 h-5" />}
             />
             <InfoCard 
               title={t('about_mission_title')}
               text={t('about_mission_text')}
               imageUrl="https://picsum.photos/seed/mission/800/600"
               reverse={true}
-              icon="🚀"
+              icon={<HiRocket className="text-xl text-white w-5 h-5" />}
             />
             <InfoCard 
               title={t('about_vision_title')}
               text={t('about_vision_text')}
               imageUrl="https://picsum.photos/seed/vision/800/600"
-              icon="👁"
+              icon={<HiEye className="text-xl text-white w-5 h-5" />}
             />
           </div>
 
