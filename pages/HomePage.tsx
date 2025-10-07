@@ -30,9 +30,9 @@ export const HomePage: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-white pt-24">
+    <div className="bg-white">
         {/* Hero Section */}
-      <div className="relative bg-slate-900 text-white min-h-screen flex items-center -mt-24">
+      <div className="relative bg-slate-900 text-white min-h-screen flex items-center">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
