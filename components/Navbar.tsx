@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { LanguageSwitcher } from './LanguageSwitcher';
-import { HiHome, HiInformationCircle, HiCollection, HiMenu, HiX, HiOfficeBuilding } from 'react-icons/hi';
 
 const NavLinks: React.FC = () => {
   const { t } = useTranslation();
@@ -45,7 +44,7 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center">
             <Link to="/" className="text-slate-800 font-bold text-xl flex items-center hover:text-blue-600 transition-colors duration-300">
               <div className="bg-slate-800 p-2 rounded-lg mr-3">
-                <HiOfficeBuilding className="text-white text-lg w-5 h-5" />
+                <span className="text-white text-lg">🏛️</span>
               </div>
               <div className="flex flex-col">
                 <span className="text-lg font-bold text-slate-800">
@@ -64,11 +63,13 @@ export const Navbar: React.FC = () => {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
               className="inline-flex items-center justify-center p-2 rounded-lg bg-slate-800 text-white hover:bg-slate-700 focus:outline-none transition-colors duration-300"
             >
-              {isMobileMenuOpen ? (
-                <HiX className="h-6 w-6" />
-              ) : (
-                <HiMenu className="h-6 w-6" />
-              )}
+              <svg className="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                {isMobileMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
             </button>
           </div>
         </div>
