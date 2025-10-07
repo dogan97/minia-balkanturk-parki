@@ -3,16 +3,28 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useArtworkBySlug } from '../hooks/useArtworks';
+import { 
+  ArrowLeftIcon, 
+  ArrowRightIcon, 
+  MapPinIcon, 
+  UserIcon, 
+  CalendarDaysIcon, 
+  ScaleIcon, 
+  BookOpenIcon, 
+  BuildingOfficeIcon, 
+  MagnifyingGlassIcon, 
+  HomeIcon 
+} from '@heroicons/react/24/outline';
 
 const InfoCard: React.FC<{ 
   label: string; 
   value: string; 
-  icon: string;
+  icon: React.ReactNode;
 }> = ({ label, value, icon }) => (
   <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
     <div className="flex items-center mb-3">
       <div className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center mr-3">
-        <span className="text-white">{icon}</span>
+        {icon}
       </div>
       <h3 className="text-sm font-semibold text-gray-600 uppercase tracking-wider">{label}</h3>
     </div>
@@ -53,7 +65,7 @@ export const ArtworkDetailPage: React.FC = () => {
               to="/eserler" 
               className="inline-flex items-center bg-gray-100 rounded-lg px-4 py-2 hover:bg-gray-200 transition-colors duration-300 mb-8"
             >
-              <span className="mr-2">←</span>
+              <ArrowLeftIcon className="w-5 h-5 mr-2 text-gray-600" />
               <span className="font-medium text-gray-700">Geri Dön</span>
             </Link>
 
@@ -90,13 +102,13 @@ export const ArtworkDetailPage: React.FC = () => {
                         onClick={prevImage} 
                         className="absolute left-4 top-1/2 -translate-y-1/2 bg-white text-slate-800 p-2 rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg"
                       >
-                        <span>←</span>
+                        <ArrowLeftIcon className="w-5 h-5" />
                       </button>
                       <button 
                         onClick={nextImage} 
                         className="absolute right-4 top-1/2 -translate-y-1/2 bg-white text-slate-800 p-2 rounded-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg"
                       >
-                        <span>→</span>
+                        <ArrowRightIcon className="w-5 h-5" />
                       </button>
                     </>
                   )}
@@ -133,7 +145,7 @@ export const ArtworkDetailPage: React.FC = () => {
               <div className="bg-white rounded-lg p-8 shadow-lg border border-gray-200">
                 <div className="flex items-center mb-6">
                   <div className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center mr-4">
-                    <span className="text-white">📖</span>
+                    <BookOpenIcon className="w-5 h-5 text-white" />
                   </div>
                   <h2 className="text-2xl font-bold text-slate-800">
                     Açıklama
@@ -147,22 +159,22 @@ export const ArtworkDetailPage: React.FC = () => {
                 <InfoCard 
                   label={t('artwork_detail_location')} 
                   value={artwork.location}
-                  icon="📍"
+                  icon={<MapPinIcon className="w-5 h-5 text-white" />}
                 />
                 <InfoCard 
                   label={t('artwork_detail_architect')} 
                   value={artwork.architect}
-                  icon="👷"
+                  icon={<UserIcon className="w-5 h-5 text-white" />}
                 />
                 <InfoCard 
                   label={t('artwork_detail_year')} 
                   value={artwork.year}
-                  icon="📅"
+                  icon={<CalendarDaysIcon className="w-5 h-5 text-white" />}
                 />
                 <InfoCard 
                   label={t('artwork_detail_scale')} 
                   value={artwork.scale}
-                  icon="📏"
+                  icon={<ScaleIcon className="w-5 h-5 text-white" />}
                 />
               </div>
             </div>
@@ -173,7 +185,7 @@ export const ArtworkDetailPage: React.FC = () => {
             <div className="bg-gray-50 rounded-lg p-8 md:p-12">
               <div className="flex items-center mb-8">
                 <div className="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center mr-4">
-                  <span className="text-white text-2xl">🏛️</span>
+                  <BuildingOfficeIcon className="w-6 h-6 text-white" />
                 </div>
                 <h2 className="text-2xl md:text-3xl font-bold text-slate-800">
                   {t('artwork_detail_background')}
@@ -195,7 +207,7 @@ export const NotFoundPage: React.FC = () => {
             <div className="text-center px-4">
                 <div className="bg-gray-50 rounded-lg p-12 max-w-md mx-auto">
                     <div className="w-24 h-24 bg-slate-800 rounded-lg flex items-center justify-center mx-auto mb-8">
-                        <span className="text-white text-4xl">🔍</span>
+                        <MagnifyingGlassIcon className="w-12 h-12 text-white" />
                     </div>
                     <h1 className="text-4xl font-bold text-slate-800 mb-4">
                         {t('not_found')}
@@ -205,7 +217,7 @@ export const NotFoundPage: React.FC = () => {
                         to="/" 
                         className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300"
                     >
-                        <span className="mr-2">🏠</span>
+                        <HomeIcon className="w-5 h-5 mr-2" />
                         Ana Sayfaya Dön
                     </Link>
                 </div>
