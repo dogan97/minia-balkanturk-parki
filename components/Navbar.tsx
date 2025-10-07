@@ -44,8 +44,8 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="text-slate-800 font-bold text-xl flex items-center hover:text-blue-600 transition-colors duration-300">
-              <div className="bg-slate-800 p-2 rounded-lg mr-3">
-                <BuildingOfficeIcon className="w-5 h-5 text-white" />
+              <div className="mr-3">
+                <BuildingOfficeIcon className="w-8 h-8 text-blue-600" />
               </div>
               <div className="flex flex-col">
                 <span className="text-lg font-bold text-slate-800">

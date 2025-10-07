@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { BuildingOfficeIcon, GlobeAltIcon, StarIcon, Squares2X2Icon, TargetIcon, RocketLaunchIcon, EyeIcon } from '@heroicons/react/24/outline';
+import { BuildingOfficeIcon, GlobeAltIcon, StarIcon, Squares2X2Icon, FlagIcon, RocketLaunchIcon, EyeIcon } from '@heroicons/react/24/outline';
 
 const InfoCard: React.FC<{ 
   title: string; 
@@ -15,8 +15,10 @@ const InfoCard: React.FC<{
       <div className="lg:w-1/2 p-8 lg:p-12">
         <div className="flex items-center mb-6">
           {icon && (
-            <div className="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center mr-4">
-              {icon}
+            <div className="mr-4">
+              {React.cloneElement(icon as React.ReactElement, {
+                className: "w-8 h-8 text-blue-600"
+              })}
             </div>
           )}
           <h3 className="text-2xl font-bold text-slate-800">
@@ -43,8 +45,10 @@ const InfoCard: React.FC<{
 
 const StatsCard: React.FC<{ number: string; label: string; icon: React.ReactNode }> = ({ number, label, icon }) => (
   <div className="text-center bg-white p-6 rounded-lg shadow-lg">
-    <div className="w-16 h-16 bg-slate-800 rounded-lg flex items-center justify-center mx-auto mb-4">
-      {icon}
+    <div className="flex justify-center mb-4">
+      {React.cloneElement(icon as React.ReactElement, {
+        className: "w-12 h-12 text-blue-600"
+      })}
     </div>
     <div className="text-3xl font-bold text-slate-800 mb-2">
       {number}
@@ -66,8 +70,8 @@ export const AboutPage: React.FC = () => {
       {/* Hero Section */}
       <div className="bg-slate-900 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center bg-white rounded-lg p-3 mb-8">
-            <BuildingOfficeIcon className="w-8 h-8 text-slate-800" />
+          <div className="mb-8">
+            <BuildingOfficeIcon className="w-12 h-12 text-white mx-auto" />
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             {t('about_title')}
@@ -87,10 +91,10 @@ export const AboutPage: React.FC = () => {
           {/* Stats Section */}
           <div className="bg-gray-50 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-16 mb-20">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-              <StatsCard number="10+" label="Tarihi Eser" icon={<BuildingOfficeIcon className="w-6 h-6 text-white" />} />
-              <StatsCard number="4" label="Dil Desteği" icon={<GlobeAltIcon className="w-6 h-6 text-white" />} />
-              <StatsCard number="2024" label="Kuruluş Yılı" icon={<StarIcon className="w-6 h-6 text-white" />} />
-              <StatsCard number="∞" label="Kültürel Miras" icon={<Squares2X2Icon className="w-6 h-6 text-white" />} />
+              <StatsCard number="10+" label="Tarihi Eser" icon={<BuildingOfficeIcon />} />
+              <StatsCard number="4" label="Dil Desteği" icon={<GlobeAltIcon />} />
+              <StatsCard number="2024" label="Kuruluş Yılı" icon={<StarIcon />} />
+              <StatsCard number="∞" label="Kültürel Miras" icon={<Squares2X2Icon />} />
             </div>
           </div>
           
@@ -100,20 +104,20 @@ export const AboutPage: React.FC = () => {
               title={t('about_purpose_title')}
               text={t('about_purpose_text')}
               imageUrl="https://picsum.photos/seed/purpose/800/600"
-              icon={<TargetIcon className="w-5 h-5 text-white" />}
+              icon={<FlagIcon />}
             />
             <InfoCard 
               title={t('about_mission_title')}
               text={t('about_mission_text')}
               imageUrl="https://picsum.photos/seed/mission/800/600"
               reverse={true}
-              icon={<RocketLaunchIcon className="w-5 h-5 text-white" />}
+              icon={<RocketLaunchIcon />}
             />
             <InfoCard 
               title={t('about_vision_title')}
               text={t('about_vision_text')}
               imageUrl="https://picsum.photos/seed/vision/800/600"
-              icon={<EyeIcon className="w-5 h-5 text-white" />}
+              icon={<EyeIcon />}
             />
           </div>
 
