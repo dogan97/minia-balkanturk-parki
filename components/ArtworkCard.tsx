@@ -2,7 +2,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { HiLocationMarker, HiArrowRight } from 'react-icons/hi';
 
 interface ArtworkCardProps {
   slug: string;
@@ -30,7 +29,7 @@ export const ArtworkCard: React.FC<ArtworkCardProps> = ({ slug, title, thumbnail
         {/* Location Badge */}
         <div className="flex items-center mb-3">
           <div className="flex items-center bg-gray-100 text-gray-700 px-3 py-1 rounded-lg text-sm font-medium">
-            <HiLocationMarker className="w-4 h-4 mr-1" />
+            <span className="mr-1">📍</span>
             {location}
           </div>
         </div>
@@ -46,7 +45,7 @@ export const ArtworkCard: React.FC<ArtworkCardProps> = ({ slug, title, thumbnail
           className="inline-flex items-center justify-center w-full bg-blue-600 text-white px-4 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300"
         >
           <span className="mr-2">{t('artwork_card_button')}</span>
-          <HiArrowRight className="w-4 h-4" />
+          <span>→</span>
         </Link>
       </div>
     </div>
