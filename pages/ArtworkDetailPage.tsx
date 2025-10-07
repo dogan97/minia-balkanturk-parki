@@ -23,7 +23,7 @@ const InfoCard: React.FC<{
 }> = ({ label, value, icon }) => (
   <div className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100">
     <div className="flex items-center mb-3">
-      <div className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center mr-3">
+      <div className="mr-3">
         {icon}
       </div>
       <h3 className="text-sm font-semibold text-gray-600 uppercase tracking-wider">{label}</h3>
@@ -144,8 +144,8 @@ export const ArtworkDetailPage: React.FC = () => {
               {/* Description Card */}
               <div className="bg-white rounded-lg p-8 shadow-lg border border-gray-200">
                 <div className="flex items-center mb-6">
-                  <div className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center mr-4">
-                    <BookOpenIcon className="w-5 h-5 text-white" />
+                  <div className="mr-4">
+                    <BookOpenIcon className="w-6 h-6 text-blue-600" />
                   </div>
                   <h2 className="text-2xl font-bold text-slate-800">
                     Açıklama
@@ -159,22 +159,22 @@ export const ArtworkDetailPage: React.FC = () => {
                 <InfoCard 
                   label={t('artwork_detail_location')} 
                   value={artwork.location}
-                  icon={<MapPinIcon className="w-5 h-5 text-white" />}
+                  icon={<MapPinIcon className="w-5 h-5 text-blue-600" />}
                 />
                 <InfoCard 
                   label={t('artwork_detail_architect')} 
                   value={artwork.architect}
-                  icon={<UserIcon className="w-5 h-5 text-white" />}
+                  icon={<UserIcon className="w-5 h-5 text-blue-600" />}
                 />
                 <InfoCard 
                   label={t('artwork_detail_year')} 
                   value={artwork.year}
-                  icon={<CalendarDaysIcon className="w-5 h-5 text-white" />}
+                  icon={<CalendarDaysIcon className="w-5 h-5 text-blue-600" />}
                 />
                 <InfoCard 
                   label={t('artwork_detail_scale')} 
                   value={artwork.scale}
-                  icon={<ScaleIcon className="w-5 h-5 text-white" />}
+                  icon={<ScaleIcon className="w-5 h-5 text-blue-600" />}
                 />
               </div>
             </div>
@@ -184,8 +184,8 @@ export const ArtworkDetailPage: React.FC = () => {
           <div className="mt-16">
             <div className="bg-gray-50 rounded-lg p-8 md:p-12">
               <div className="flex items-center mb-8">
-                <div className="w-12 h-12 bg-slate-800 rounded-lg flex items-center justify-center mr-4">
-                  <BuildingOfficeIcon className="w-6 h-6 text-white" />
+                <div className="mr-4">
+                  <BuildingOfficeIcon className="w-8 h-8 text-blue-600" />
                 </div>
                 <h2 className="text-2xl md:text-3xl font-bold text-slate-800">
                   {t('artwork_detail_background')}
@@ -206,8 +206,8 @@ export const NotFoundPage: React.FC = () => {
         <div className="min-h-screen bg-white flex items-center justify-center">
             <div className="text-center px-4">
                 <div className="bg-gray-50 rounded-lg p-12 max-w-md mx-auto">
-                    <div className="w-24 h-24 bg-slate-800 rounded-lg flex items-center justify-center mx-auto mb-8">
-                        <MagnifyingGlassIcon className="w-12 h-12 text-white" />
+                    <div className="flex justify-center mb-8">
+                        <MagnifyingGlassIcon className="w-16 h-16 text-blue-600" />
                     </div>
                     <h1 className="text-4xl font-bold text-slate-800 mb-4">
                         {t('not_found')}

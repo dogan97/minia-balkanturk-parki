@@ -25,8 +25,8 @@ export const ArtworksPage: React.FC = () => {
       {/* Hero Section */}
       <div className="bg-slate-900 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center bg-white rounded-lg p-3 mb-8">
-            <BuildingOfficeIcon className="w-8 h-8 text-slate-800" />
+          <div className="mb-8">
+            <BuildingOfficeIcon className="w-12 h-12 text-white mx-auto" />
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             {t('artworks_title')}
@@ -48,7 +48,7 @@ export const ArtworksPage: React.FC = () => {
             <div className="max-w-2xl mx-auto">
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <MagnifyingGlassIcon className="h-5 w-5 text-gray-400" />
+                  <MagnifyingGlassIcon className="h-6 w-6 text-gray-400" />
                 </div>
                 <input
                   type="text"
