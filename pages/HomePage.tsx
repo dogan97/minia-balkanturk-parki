@@ -78,26 +78,104 @@ export const HomePage: React.FC = () => {
         </div>
       </div>
 
-      {/* Stats Section */}
+      {/* Featured Artworks Section */}
       <div className="bg-gray-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <div className="text-4xl font-bold text-slate-800 mb-2">9</div>
-              <div className="text-gray-600 font-medium">Tarihi Eser</div>
-            </div>
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <div className="text-4xl font-bold text-slate-800 mb-2">4</div>
-              <div className="text-gray-600 font-medium">Dil Desteği</div>
-            </div>
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <div className="text-4xl font-bold text-slate-800 mb-2">1:25</div>
-              <div className="text-gray-600 font-medium">Ortalama Ölçek</div>
-            </div>
-            <div className="bg-white p-8 rounded-lg shadow-lg">
-              <div className="text-4xl font-bold text-slate-800 mb-2">∞</div>
-              <div className="text-gray-600 font-medium">Kültürel Değer</div>
-            </div>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+              Öne Çıkan Eserler
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Parkımızın en etkileyici tarihi yapılarını keşfedin ve Balkan kültürünün zenginliğini deneyimleyin
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {/* Featured Artwork 1 */}
+            <Link to="/eser/bayrakli-camii" className="group">
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform group-hover:scale-105">
+                <div className="aspect-w-16 aspect-h-12 bg-gray-200">
+                  <img 
+                    src="https://picsum.photos/seed/bayrakli-camii/400/300" 
+                    alt="Bayraklı Camii"
+                    className="w-full h-48 object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center mb-2">
+                    <MapPinIcon className="w-4 h-4 text-blue-600 mr-1" />
+                    <span className="text-sm text-gray-600">Sarajevo, Bosna Hersek</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-800 mb-2 group-hover:text-blue-600 transition-colors">
+                    Bayraklı Camii
+                  </h3>
+                  <p className="text-gray-600 text-sm line-clamp-2">
+                    16. yüzyıldan kalma bu tarihi cami, Osmanlı mimarisinin güzel bir örneğidir.
+                  </p>
+                </div>
+              </div>
+            </Link>
+
+            {/* Featured Artwork 2 */}
+            <Link to="/eser/stari-most" className="group">
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform group-hover:scale-105">
+                <div className="aspect-w-16 aspect-h-12 bg-gray-200">
+                  <img 
+                    src="https://picsum.photos/seed/stari-most/400/300" 
+                    alt="Stari Most"
+                    className="w-full h-48 object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center mb-2">
+                    <MapPinIcon className="w-4 h-4 text-blue-600 mr-1" />
+                    <span className="text-sm text-gray-600">Mostar, Bosna Hersek</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-800 mb-2 group-hover:text-blue-600 transition-colors">
+                    Stari Most
+                  </h3>
+                  <p className="text-gray-600 text-sm line-clamp-2">
+                    UNESCO Dünya Mirası listesindeki bu tarihi köprü, Balkan mimarisinin simgesidir.
+                  </p>
+                </div>
+              </div>
+            </Link>
+
+            {/* Featured Artwork 3 */}
+            <Link to="/eser/gazi-husrev-bey-camii" className="group">
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform group-hover:scale-105">
+                <div className="aspect-w-16 aspect-h-12 bg-gray-200">
+                  <img 
+                    src="https://picsum.photos/seed/gazi-husrev/400/300" 
+                    alt="Gazi Husrev Bey Camii"
+                    className="w-full h-48 object-cover"
+                  />
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center mb-2">
+                    <MapPinIcon className="w-4 h-4 text-blue-600 mr-1" />
+                    <span className="text-sm text-gray-600">Sarajevo, Bosna Hersek</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-800 mb-2 group-hover:text-blue-600 transition-colors">
+                    Gazi Husrev Bey Camii
+                  </h3>
+                  <p className="text-gray-600 text-sm line-clamp-2">
+                    Klasik Osmanlı mimarisinin mükemmel örneği olan bu camii, 1530 yılında inşa edilmiştir.
+                  </p>
+                </div>
+              </div>
+            </Link>
+          </div>
+
+          {/* View All Button */}
+          <div className="text-center">
+            <Link 
+              to="/eserler"
+              className="inline-flex items-center bg-blue-600 text-white font-semibold py-4 px-8 rounded-lg text-lg hover:bg-blue-700 transition-colors duration-300"
+            >
+              <span className="mr-2">Tüm Eserleri Görüntüle</span>
+              <BuildingOfficeIcon className="w-5 h-5" />
+            </Link>
           </div>
         </div>
       </div>

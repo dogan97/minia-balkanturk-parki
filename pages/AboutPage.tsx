@@ -66,7 +66,7 @@ export const AboutPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-white pt-24">
+    <div className="bg-white">
       {/* Hero Section */}
       <div className="bg-slate-900 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

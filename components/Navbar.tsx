@@ -9,7 +9,7 @@ const NavLinks: React.FC = () => {
   const { t } = useTranslation();
   const linkClass = "px-5 py-3 rounded-lg text-base font-medium transition-colors duration-300";
   const activeLinkClass = "bg-blue-600 text-white";
-  const inactiveLinkClass = "text-gray-700 hover:bg-gray-100";
+  const inactiveLinkClass = "text-slate-800 hover:bg-white/20 drop-shadow-sm";
 
   return (
     <>
@@ -39,19 +39,19 @@ export const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white/80 backdrop-blur-lg shadow-xl border-b border-white/30 fixed w-full z-50 top-0">
+    <nav className="bg-white/20 shadow-2xl border-b border-white/10 fixed w-full z-50 top-0" style={{backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)'}}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-24">
           <div className="flex items-center">
-            <Link to="/" className="text-slate-800 font-bold text-xl flex items-center hover:text-blue-600 transition-colors duration-300 py-2">
+            <Link to="/" className="text-slate-900 font-bold text-xl flex items-center hover:text-blue-600 transition-colors duration-300 py-2 drop-shadow-sm">
               <div className="mr-4">
                 <BuildingOfficeIcon className="w-10 h-10 text-blue-600" />
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-bold text-slate-800">
+                <span className="text-xl font-bold text-slate-900 drop-shadow-sm">
                   Minia Balkantürk
                 </span>
-                <span className="text-sm text-gray-600 font-medium">Parkı</span>
+                <span className="text-sm text-gray-700 font-medium drop-shadow-sm">Parkı</span>
               </div>
             </Link>
           </div>
