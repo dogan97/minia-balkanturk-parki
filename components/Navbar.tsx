@@ -7,7 +7,7 @@ import { BuildingOfficeIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/ou
 
 const NavLinks: React.FC = () => {
   const { t } = useTranslation();
-  const linkClass = "px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-300";
+  const linkClass = "px-5 py-3 rounded-lg text-base font-medium transition-colors duration-300";
   const activeLinkClass = "bg-blue-600 text-white";
   const inactiveLinkClass = "text-gray-700 hover:bg-gray-100";
 
@@ -39,30 +39,30 @@ export const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow-sm border-b border-gray-200 fixed w-full z-50 top-0">
+    <nav className="bg-white shadow-lg border-b border-gray-200 fixed w-full z-50 top-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-24">
           <div className="flex items-center">
-            <Link to="/" className="text-slate-800 font-bold text-xl flex items-center hover:text-blue-600 transition-colors duration-300">
-              <div className="mr-3">
-                <BuildingOfficeIcon className="w-8 h-8 text-blue-600" />
+            <Link to="/" className="text-slate-800 font-bold text-xl flex items-center hover:text-blue-600 transition-colors duration-300 py-2">
+              <div className="mr-4">
+                <BuildingOfficeIcon className="w-10 h-10 text-blue-600" />
               </div>
               <div className="flex flex-col">
-                <span className="text-lg font-bold text-slate-800">
+                <span className="text-xl font-bold text-slate-800">
                   Minia Balkantürk
                 </span>
-                <span className="text-xs text-gray-600 font-medium">Parkı</span>
+                <span className="text-sm text-gray-600 font-medium">Parkı</span>
               </div>
             </Link>
           </div>
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden md:flex items-center space-x-8">
             <NavLinks />
             <LanguageSwitcher />
           </div>
           <div className="md:hidden flex items-center">
             <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
-              className="inline-flex items-center justify-center p-2 rounded-lg bg-slate-800 text-white hover:bg-slate-700 focus:outline-none transition-colors duration-300"
+              className="inline-flex items-center justify-center p-3 rounded-lg bg-slate-800 text-white hover:bg-slate-700 focus:outline-none transition-colors duration-300"
             >
               {isMobileMenuOpen ? (
                 <XMarkIcon className="h-6 w-6" />

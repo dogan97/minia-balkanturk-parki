@@ -30,18 +30,30 @@ export const HomePage: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-white">
+    <div className="bg-white pt-24">
         {/* Hero Section */}
-      <div className="bg-slate-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <div className="relative bg-slate-900 text-white min-h-screen flex items-center -mt-24">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('https://picsum.photos/seed/minia-park/1920/1080')"
+          }}
+        ></div>
+        
+        {/* Dark Overlay for text readability */}
+        <div className="absolute inset-0 bg-slate-900/70"></div>
+        
+        {/* Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 w-full">
           <div className="text-center">
             <div className="mb-8">
-              <BuildingOfficeIcon className="w-12 h-12 text-white mx-auto" />
+              <BuildingOfficeIcon className="w-12 h-12 text-white mx-auto drop-shadow-lg" />
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-8 leading-tight">
+            <h1 className="text-4xl md:text-6xl font-bold mb-8 leading-tight drop-shadow-lg">
               {t('home_title')}
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-12">
+            <p className="text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto leading-relaxed mb-12 drop-shadow-md">
               {t('home_subtitle')}
             </p>
             
