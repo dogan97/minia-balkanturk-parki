@@ -71,7 +71,7 @@ export const HomePage: React.FC = () => {
                 to="/hakkimizda"
                 className="inline-flex items-center justify-center bg-transparent text-white font-semibold py-4 px-8 rounded-lg text-lg hover:bg-white hover:text-slate-900 transition-colors duration-300 border border-gray-300"
               >
-                Hakkımızda
+                Hakkımızdaaa
               </Link>
             </div>
           </div>
