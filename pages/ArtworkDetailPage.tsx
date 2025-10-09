@@ -1,8 +1,8 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { useArtworkBySlug } from '../hooks/useArtworks';
+import { useArtworkBySlug, useArtworks } from '../hooks/useArtworks';
 import { 
   ArrowLeftIcon, 
   ArrowRightIcon, 
@@ -35,8 +35,11 @@ const InfoCard: React.FC<{
 export const ArtworkDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const artwork = useArtworkBySlug(slug);
+  const allArtworks = useArtworks();
   const { t } = useTranslation();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const dragStartXRef = useRef<number | null>(null);
+  const dragActiveRef = useRef(false);
 
   // Scroll to top when component mounts or slug changes
   useEffect(() => {
@@ -55,39 +58,81 @@ export const ArtworkDetailPage: React.FC = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex - 1 + artwork.images.length) % artwork.images.length);
   };
   
+  const onPointerDown = (clientX: number) => {
+    dragStartXRef.current = clientX;
+    dragActiveRef.current = true;
+  };
+  const onPointerMove = (clientX: number) => {
+    if (!dragActiveRef.current || dragStartXRef.current === null) return;
+    const deltaX = clientX - dragStartXRef.current;
+    if (Math.abs(deltaX) > 60) {
+      if (deltaX < 0) {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % artwork.images.length);
+      } else {
+        setCurrentImageIndex((prevIndex) => (prevIndex - 1 + artwork.images.length) % artwork.images.length);
+      }
+      dragActiveRef.current = false;
+      dragStartXRef.current = null;
+    }
+  };
+  const onPointerUp = () => {
+    dragActiveRef.current = false;
+    dragStartXRef.current = null;
+  };
+  
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowRight') setCurrentImageIndex((prevIndex) => (prevIndex + 1) % artwork.images.length);
+      if (e.key === 'ArrowLeft') setCurrentImageIndex((prevIndex) => (prevIndex - 1 + artwork.images.length) % artwork.images.length);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [artwork.images.length]);
+
+  const related = useMemo(() => {
+    const city = artwork.location.split(',')[0]?.trim();
+    return allArtworks.filter(a => a.slug !== artwork.slug && a.location.startsWith(city || '')).slice(0, 3);
+  }, [allArtworks, artwork]);
+  
   return (
     <div className="bg-white pt-24">
-      <div className="py-2">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mb-10 flex items-center justify-between">
+          <Link 
+            to="/eserler" 
+            className="inline-flex items-center bg-gray-100 text-slate-800 rounded-full px-4 py-2 hover:bg-gray-200 transition-colors"
+          >
+            <ArrowLeftIcon className="w-5 h-5 mr-2" /> Geri Dön
+          </Link>
+        </div>
+        <div className="text-center mb-8">
+          <h1 className="text-3xl md:text-5xl font-bold text-slate-900 mb-3">{artwork.title}</h1>
+          <div className="flex justify-center"><div className="w-24 h-1 bg-blue-600 rounded-full"></div></div>
+        </div>
+      </div>
+      <div className="py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header Section */}
-          <div className="mb-12">
-            <Link 
-              to="/eserler" 
-              className="inline-flex items-center bg-gray-100 rounded-lg px-4 py-2 hover:bg-gray-200 transition-colors duration-300 mb-8"
-            >
-              <ArrowLeftIcon className="w-5 h-5 mr-2 text-gray-600" />
-              <span className="font-medium text-gray-700">Geri Dön</span>
-            </Link>
-
-            <div className="text-center">
-              <h1 className="text-4xl md:text-6xl font-bold text-slate-800 mb-6">
-                {artwork.title}
-              </h1>
-              <div className="flex justify-center">
-                <div className="w-24 h-1 bg-blue-600 rounded-full"></div>
-              </div>
-            </div>
-          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Image Slider */}
             <div className="lg:col-span-2">
               <div className="bg-white rounded-lg p-6 shadow-lg border border-gray-200">
-                <div className="relative rounded-lg overflow-hidden">
+                <div 
+                  className="relative rounded-lg overflow-hidden select-none touch-pan-y"
+                  onMouseDown={(e) => onPointerDown(e.clientX)}
+                  onMouseMove={(e) => onPointerMove(e.clientX)}
+                  onMouseUp={onPointerUp}
+                  onMouseLeave={onPointerUp}
+                  onTouchStart={(e) => onPointerDown(e.touches[0].clientX)}
+                  onTouchMove={(e) => onPointerMove(e.touches[0].clientX)}
+                  onTouchEnd={onPointerUp}
+                >
                   <img 
                     src={artwork.images[currentImageIndex]} 
                     alt={`${artwork.title} - ${currentImageIndex + 1}`} 
                     className="w-full h-96 md:h-[500px] object-cover"
+                    draggable={false}
+                    onDragStart={(e) => e.preventDefault()}
                   />
                   
                   {/* Image Counter */}
@@ -131,6 +176,8 @@ export const ArtworkDetailPage: React.FC = () => {
                           src={img} 
                           alt={`thumbnail ${index + 1}`} 
                           className="w-20 h-16 object-cover"
+                          draggable={false}
+                          onDragStart={(e) => e.preventDefault()}
                         />
                       </button>
                     ))}
@@ -194,6 +241,26 @@ export const ArtworkDetailPage: React.FC = () => {
               <p className="text-gray-600 leading-relaxed text-lg md:text-xl">{artwork.culturalBackground}</p>
             </div>
           </div>
+
+          {related.length > 0 && (
+            <div className="mt-16">
+              <h3 className="text-2xl font-bold text-slate-900 mb-6">Benzer Eserler</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {related.map(r => (
+                  <Link key={r.id} to={`/eser/${r.slug}`} className="group block bg-white rounded-2xl overflow-hidden border border-gray-200 shadow hover:shadow-lg transition-all duration-300">
+                    <div className="relative">
+                      <img src={r.thumbnail} alt={r.title} className="w-full h-44 object-cover" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                    <div className="p-5">
+                      <h4 className="text-base font-semibold text-slate-900 mb-1 group-hover:text-blue-600 transition-colors">{r.title}</h4>
+                      <p className="text-xs text-gray-600">{r.location}</p>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
