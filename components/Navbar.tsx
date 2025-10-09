@@ -80,7 +80,7 @@ export const Navbar: React.FC = () => {
             <div className="px-4 pt-6 pb-8 space-y-4">
               <div className="flex flex-col space-y-2 items-center text-center">
                 <NavLink to="/" className={({ isActive }) => `${isActive ? 'bg-blue-600 text-white' : 'text-slate-800 hover:bg-gray-100'} w-full max-w-xs px-4 py-3 rounded-xl text-base font-medium`} onClick={() => setIsMobileMenuOpen(false)}>
-                  Anasayfa
+                  Anasayfaaaaaaa
                 </NavLink>
                 <NavLink to="/hakkimizda" className={({ isActive }) => `${isActive ? 'bg-blue-600 text-white' : 'text-slate-800 hover:bg-gray-100'} w-full max-w-xs px-4 py-3 rounded-xl text-base font-medium`} onClick={() => setIsMobileMenuOpen(false)}>
                   Hakkımızda
