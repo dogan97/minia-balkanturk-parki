@@ -157,7 +157,7 @@ export const HomePage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <div className="inline-flex items-center rounded-full px-3 py-1 bg-rose-50 text-rose-700 text-xs font-semibold mb-4">
-              Ziyaretçi Yorumları
+              Ziyaretçi Yorumlarıaaa
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight">Ziyaretçilerimiz Ne Diyor?</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">Gerçek deneyimler, parkı keşfetmeden önce size ilham versin.</p>
