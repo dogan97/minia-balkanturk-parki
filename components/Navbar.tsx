@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { BuildingOfficeIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
-const NavLinks: React.FC = () => {
+const NavLinks: React.FC<{ onLinkClick?: () => void }> = ({ onLinkClick }) => {
   const { t } = useTranslation();
   const baseLinkClass = "px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300";
   const getClass = (isActive: boolean) =>
@@ -13,13 +13,13 @@ const NavLinks: React.FC = () => {
 
   return (
     <>
-      <NavLink to="/" className={({ isActive }) => getClass(isActive)}>
+      <NavLink to="/" className={({ isActive }) => getClass(isActive)} onClick={onLinkClick}>
         {t('nav_home')}
       </NavLink>
-      <NavLink to="/hakkimizda" className={({ isActive }) => getClass(isActive)}>
+      <NavLink to="/hakkimizda" className={({ isActive }) => getClass(isActive)} onClick={onLinkClick}>
         {t('nav_about')}
       </NavLink>
-      <NavLink to="/eserler" className={({ isActive }) => getClass(isActive)}>
+      <NavLink to="/eserler" className={({ isActive }) => getClass(isActive)} onClick={onLinkClick}>
         {t('nav_artworks')}
       </NavLink>
     </>
@@ -27,6 +27,7 @@ const NavLinks: React.FC = () => {
 }
 
 export const Navbar: React.FC = () => {
+  const { t } = useTranslation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
@@ -55,7 +56,7 @@ export const Navbar: React.FC = () => {
                   "ml-2 inline-flex items-center rounded-full bg-blue-600 text-white text-sm font-semibold px-4 py-2 hover:bg-blue-700 transition-colors duration-300"
                 }
               >
-                Eserleri Gör
+                {t('nav_artworks')}
               </NavLink>
             </div>
             <div className="md:hidden flex items-center">
@@ -80,13 +81,13 @@ export const Navbar: React.FC = () => {
             <div className="px-4 pt-6 pb-8 space-y-4">
               <div className="flex flex-col space-y-2 items-center text-center">
                 <NavLink to="/" className={({ isActive }) => `${isActive ? 'bg-blue-600 text-white' : 'text-slate-800 hover:bg-gray-100'} w-full max-w-xs px-4 py-3 rounded-xl text-base font-medium`} onClick={() => setIsMobileMenuOpen(false)}>
-                  Anasayfaaaaaaa
+                  {t('nav_home')}
                 </NavLink>
                 <NavLink to="/hakkimizda" className={({ isActive }) => `${isActive ? 'bg-blue-600 text-white' : 'text-slate-800 hover:bg-gray-100'} w-full max-w-xs px-4 py-3 rounded-xl text-base font-medium`} onClick={() => setIsMobileMenuOpen(false)}>
-                  Hakkımızda
+                  {t('nav_about')}
                 </NavLink>
                 <NavLink to="/eserler" className={({ isActive }) => `${isActive ? 'bg-blue-600 text-white' : 'text-slate-800 hover:bg-gray-100'} w-full max-w-xs px-4 py-3 rounded-xl text-base font-medium`} onClick={() => setIsMobileMenuOpen(false)}>
-                  Eserler
+                  {t('nav_artworks')}
                 </NavLink>
               </div>
               <div className="pt-4 border-t border-gray-200 flex justify-center">
