@@ -25,15 +25,15 @@ export const HomePage: React.FC = () => {
   const { t } = useTranslation();
   const sliderImages = useMemo(() => [
     {
-      url: '/images/hero-slider/1.jpg',
+      url: `${import.meta.env.BASE_URL}images/hero-slider/1.jpg`,
       alt: 'Minia Balkantürk Parkı 1',
     },
     {
-      url: '/images/hero-slider/2.jpg',
+      url: `${import.meta.env.BASE_URL}images/hero-slider/2.jpg`,
       alt: 'Minia Balkantürk Parkı 2',
     },
     {
-      url: '/images/hero-slider/3.jpg',
+      url: `${import.meta.env.BASE_URL}images/hero-slider/3.jpg`,
       alt: 'Minia Balkantürk Parkı 3',
     },
   ], []);
