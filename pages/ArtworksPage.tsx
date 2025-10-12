@@ -70,27 +70,19 @@ export const ArtworksPage: React.FC = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <div className="relative text-white pt-24 pb-16">
-        {/* Background image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1920&auto=format&fit=crop')" }}
-          aria-hidden="true"
-        ></div>
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-slate-900/70"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <div className="inline-flex items-center rounded-full px-3 py-1 bg-white/10 text-white text-xs font-semibold mb-5 border border-white/20">
-              Koleksiyon
-            </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight drop-shadow">
-              {t('artworks_title')}
-            </h1>
-            <p className="text-base md:text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
-              {t('artworks_subtitle')}
-            </p>
-            <div className="mt-6 flex justify-center"><div className="w-24 h-1 bg-blue-500 rounded-full"></div></div>
+      <div className="bg-slate-900 text-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="mb-8">
+            <BuildingOfficeIcon className="w-12 h-12 text-white mx-auto" />
+          </div>
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            {t('artworks_title')}
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            {t('artworks_subtitle')}
+          </p>
+          <div className="mt-8 flex justify-center">
+            <div className="w-24 h-1 bg-blue-600 rounded-full"></div>
           </div>
         </div>
       </div>

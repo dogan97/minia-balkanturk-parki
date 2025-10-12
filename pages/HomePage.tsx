@@ -25,15 +25,15 @@ export const HomePage: React.FC = () => {
   const { t } = useTranslation();
   const sliderImages = useMemo(() => [
     {
-      url: 'https://picsum.photos/seed/minia-park-1/1920/1080',
+      url: '/images/hero-slider/1.jpg',
       alt: 'Minia Balkantürk Parkı 1',
     },
     {
-      url: 'https://picsum.photos/seed/minia-park-2/1920/1080',
+      url: '/images/hero-slider/2.jpg',
       alt: 'Minia Balkantürk Parkı 2',
     },
     {
-      url: 'https://picsum.photos/seed/minia-park-3/1920/1080',
+      url: '/images/hero-slider/3.jpg',
       alt: 'Minia Balkantürk Parkı 3',
     },
   ], []);
@@ -157,7 +157,7 @@ export const HomePage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <div className="inline-flex items-center rounded-full px-3 py-1 bg-rose-50 text-rose-700 text-xs font-semibold mb-4">
-              Ziyaretçi Yorumlarıaaa
+              Ziyaretçi Yorumları
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight">Ziyaretçilerimiz Ne Diyor?</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">Gerçek deneyimler, parkı keşfetmeden önce size ilham versin.</p>
@@ -238,16 +238,18 @@ export const HomePage: React.FC = () => {
               { q: 'Dil seçeneklerini nereden değiştiririm?', a: 'Sağ üstteki dil anahtarına tıklayarak Türkçe, İngilizce, Bulgarca veya Sırpça seçebilirsiniz.' },
               { q: 'Park giriş saatleri nelerdir?', a: 'Mevsime göre değişebilir. Güncel saatler için resmi duyuruları ve tabelaları takip etmenizi öneririz.' },
             ].map((item, idx) => (
-              <details key={idx} className="group bg-white rounded-2xl p-5 md:p-6 shadow-lg border border-gray-100 mb-4">
-                <summary className="list-none flex items-start justify-between cursor-pointer">
-                  <h3 className="text-base md:text-lg font-semibold text-slate-900 pr-6">{item.q}</h3>
-                  <span className="mt-1 inline-flex items-center justify-center w-7 h-7 rounded-full bg-slate-900 text-white transition-transform duration-300 group-open:rotate-180">
+              <details key={idx} className="group bg-white rounded-2xl p-5 md:p-6 shadow-lg border border-gray-100 mb-4 overflow-hidden transition-all duration-300 hover:shadow-xl">
+                <summary className="list-none flex items-start justify-between cursor-pointer select-none">
+                  <h3 className="text-base md:text-lg font-semibold text-slate-900 pr-6 transition-colors group-open:text-blue-600">{item.q}</h3>
+                  <span className="mt-1 inline-flex items-center justify-center w-7 h-7 rounded-full bg-slate-900 text-white transition-all duration-300 group-open:rotate-180 group-open:bg-blue-600 flex-shrink-0">
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                     </svg>
                   </span>
                 </summary>
-                <p className="mt-3 text-slate-700 leading-relaxed">{item.a}</p>
+                <div className="overflow-hidden transition-all duration-300 ease-in-out group-open:animate-slideDown">
+                  <p className="mt-4 pt-4 text-slate-700 leading-relaxed border-t border-gray-100">{item.a}</p>
+                </div>
               </details>
             ))}
           </div>
