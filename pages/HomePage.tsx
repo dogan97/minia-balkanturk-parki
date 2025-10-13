@@ -298,14 +298,12 @@ export const HomePage: React.FC = () => {
                 <div className="absolute -top-4 -right-4 w-24 h-24 bg-indigo-100 rounded-full blur-2xl opacity-70" aria-hidden="true"></div>
                 <div className="relative z-10 grid grid-cols-2 gap-4">
                   <div className="border border-gray-200 rounded-xl p-4">
-                    <div className="w-full h-40 bg-gray-100 rounded-lg flex items-center justify-center">
-                      <span className="text-gray-400 text-sm">QR Önizleme</span>
-                    </div>
+                    <img src={`${import.meta.env.BASE_URL}images/qr-onizleme.jpeg`} alt="QR kod önizleme örneği" className="w-full h-40 object-cover rounded-lg" />
                     <p className="mt-3 text-sm font-medium text-slate-900">Örnek QR</p>
                     <p className="text-xs text-gray-600">Her esere özel kod</p>
                   </div>
                   <div className="border border-gray-200 rounded-xl p-4">
-                    <img src="https://picsum.photos/seed/qr-phone/400/320" alt="QR telefon tarama görseli" className="w-full h-40 object-cover rounded-lg" />
+                    <img src={`${import.meta.env.BASE_URL}images/qr-scanner.png`} alt="QR telefon tarama görseli" className="w-full h-40 object-cover rounded-lg" />
                     <p className="mt-3 text-sm font-medium text-slate-900">Telefonla Tarayın</p>
                     <p className="text-xs text-gray-600">Anında yönlendirme</p>
                   </div>
